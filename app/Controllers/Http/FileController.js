@@ -32,7 +32,7 @@ class FileController {
    */
   async store ({ request }) {
     if (!request.file('file')) return
-    const upload = request.file('file', { size: '2mb' })
+    const upload = request.file('file', { size: '5mb' })
 
     const fileName = `${Date.now()}.${upload.subtype}`
 
