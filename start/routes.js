@@ -19,3 +19,16 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.resource('users', 'UserController')
+  .apiOnly()
+  .validator(new Map([[['users.store'], ['User']]]))
+
+// Route.post('/users', 'UserController.store').validator('User')
+Route.post('/sessions', 'SessionController.store').validator('Session')
+
+Route.get('/files/:file', 'FileController.show')
+
+Route.group(() => {
+  Route.post('/files', 'FileController.store')
+}).middleware('auth')
