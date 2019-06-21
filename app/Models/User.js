@@ -21,12 +21,12 @@ class User extends Model {
     })
   }
 
-  posts () {
-    return this.hasMany('App/Models/Post')
-  }
-
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  posts () {
+    return this.hasMany('App/Models/Post')
   }
 }
 

@@ -8,12 +8,12 @@ class Post extends Model {
     return this.belongsTo('App/Models/User')
   }
 
-  cover () {
-    return this.belongsTo('App/Models/File')
+  content () {
+    return this.belongsTo('App/Models/File', 'content_id', 'id')
   }
 
-  content () {
-    return this.belongsTo('App/Models/File')
+  cover () {
+    return this.belongsTo('App/Models/File', 'cover_id', 'id')
   }
 }
 

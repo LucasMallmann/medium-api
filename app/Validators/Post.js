@@ -1,9 +1,15 @@
 'use strict'
 
 class Post {
+  get validateAll () {
+    return true
+  }
+
   get rules () {
     return {
-      // validation rules
+      title: 'required|unique:posts',
+      content_id: 'required',
+      cover_id: 'required'
     }
   }
 }

@@ -31,4 +31,7 @@ Route.get('/files/:file', 'FileController.show')
 
 Route.group(() => {
   Route.post('/files', 'FileController.store')
+  Route.get('/posts', 'PostController.list')
+  Route.resource('users.posts', 'PostController').apiOnly()
+  // .validator(new Map([[['users.posts.store'], ['Post']]]))
 }).middleware('auth')
